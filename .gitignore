@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+
+logs/
+airflow.db
+airflow.db-shm
+airflow.db-wal
+
+simple_auth_manager_passwords.json*
+.env
+
+venv/
+.env/
+.idea/
+.vscode/
