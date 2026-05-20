@@ -9,19 +9,18 @@ An ETL pipeline built with **Apache Airflow**, **Python**, **MongoDB**, and **Re
 ```
 COMMONANIMALBREEDSANDOUTCOMES/
 ├── dags/
-│   └── animals_pipeline_dags.py   # Airflow DAG definition
+│   └── animals_pipeline_dags.py
 ├── data/
 │   └── Austin_Animal_Center_Outcomes.csv
-├── logs/                          # Airflow task logs (auto-generated)
 ├── scripts/
 │   ├── __init__.py
-│   ├── extract.py                 # Read and load raw CSV data
-│   ├── transform.py               # Clean and normalize records
-│   ├── load_to_mongo.py           # Insert cleaned records into MongoDB
-│   ├── load_to_redis.py           # Cache aggregated stats in Redis
-│   └── telegram_alert.py          # On-failure Telegram notification
+│   ├── extract.py
+│   ├── transform.py
+│   ├── load_to_mongo.py
+│   ├── load_to_redis.py
+│   └── telegram_alert.py
+├── .gitignore
 ├── airflow.cfg
-├── airflow.db
 ├── requirements.txt
 └── README.md
 ```
