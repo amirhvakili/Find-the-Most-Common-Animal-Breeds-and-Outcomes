@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  airflow:
+    build: .
+    container_name: airflow
+    ports:
+      - "9090:8080"
+    volumes:
+      - C:/Users/Acer/Desktop/animal-shelter-etl-pipeline:/opt/airflow
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+    command: standalone
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
