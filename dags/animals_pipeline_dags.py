@@ -9,6 +9,8 @@ sys.path.insert(0, str(project_root))
 
 from scripts.telegram_alert import send_telegram_alert
 from scripts.extract import extract_function
+from scripts.transform import transform_function
+from scripts.load_to_redis import load_to_redis
 
 
 with DAG(
@@ -23,3 +25,13 @@ with DAG(
         task_id="extract",
         python_callable=extract_function,
     )
+    tranform_task = PythonOperator(
+        task_id="tranform",
+        python_callable=transform_function,
+    )
+    load_to_redis_task = PythonOperator(
+        task_id="load",
+        python_callable=load_to_redis,
+    )
+
+extract_task >> tranform_task >> load_to_redis_task
