@@ -1,5 +1,4 @@
-# 🐾 Common Animal Breeds and Outcomes — ETL Pipeline
-
+# 🐾 Animal-Shelter-ETL-Pipeline
 An ETL pipeline built with **Apache Airflow**, **Python**, **MongoDB**, and **Redis** using real animal shelter outcome data from the Austin Animal Center.
 
 ---
