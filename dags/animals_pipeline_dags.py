@@ -49,6 +49,6 @@ with DAG(
         task_id="load_to_redis",
         python_callable=load_to_redis,
     )
-    scala_task = run_scala()
+    report_task = run_scala()
 
-extract_task >> transform_task >> load_to_mongodb_task >> load_to_redis_task >> scala_task
+extract_task >> transform_task >> load_to_mongodb_task >> load_to_redis_task >> report_task
